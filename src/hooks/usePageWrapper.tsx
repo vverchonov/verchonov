@@ -6,11 +6,26 @@ type Props = {
   children: React.ReactNode;
 };
 
+const Links = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Blogs",
+    url: "/blogs",
+  },
+  {
+    name: "Contact Me",
+    url: "/contact",
+  },
+];
+
 const usePageWrapper = (props: Props): JSX.Element => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <div>{props.children}</div>
+      <Navbar links={Links} />
+      <div className="p-5">{props.children}</div>
       <Footer />
     </div>
   );
